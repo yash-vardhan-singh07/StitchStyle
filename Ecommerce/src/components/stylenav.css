@@ -1,0 +1,92 @@
+#navbar1{
+    display: flex;
+    align-items: flex-start;
+    justify-content: left;
+    flex-direction: column;
+
+}
+
+#navbar1 li{
+    list-style: none;
+    padding: 20px 20px;
+    position: relative;
+}
+
+#navbar1 img{
+    height: 60px;
+}
+
+#navbar1 li a{
+    text-decoration: none;
+    font-size: 26px;
+    font-weight: 600;
+    color: darkslategrey;
+    transition: 0.3s ease;
+}
+
+#navbar1 li a:hover,
+#navbar1 li a.active{
+    color: cadetblue;
+}
+
+#navbar1 li a.active::after,
+#navbar1 li a:hover::after{
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+
+/* Style for the entire table */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures borders are collapsed into a single border */
+    margin: 20px 0; /* Adds margin to the top and bottom of the table */
+}
+
+/* Style for table headers */
+th {
+    background-color: #4CAF50; /* Green background color for the header */
+    color: white; /* White text color for header */
+    padding: 12px; /* Padding inside header cells */
+    text-align: left; /* Aligns text to the left inside header cells */
+    border-bottom: 2px solid #ddd; /* Bottom border for header cells */
+}
+
+/* Style for table data cells */
+td {
+    padding: 12px; /* Padding inside data cells */
+    border-bottom: 1px solid #ddd; /* Bottom border for data cells */
+}
+
+/* Style for table rows */
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light gray background for even rows */
+}
+
+tr:hover {
+    background-color: #ddd; /* Light gray background on row hover */
+}
+
+/* Optional: Style for table borders */
+table, th, td {
+    border: 1px solid #ddd; /* Light gray border for table, headers, and data cells */
+}
+
+
+button.button{
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px 30px;
+    color: #000;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.2s;
+}
