@@ -3,7 +3,7 @@ const app=express();
 const cookieParser=require('cookie-parser');
 const cors=require('cors');
 app.use(express.json());
-app.listen(3000);
+app.listen(3001);
 console.log("app listening");
 app.use(cookieParser());
 const path=require('path');

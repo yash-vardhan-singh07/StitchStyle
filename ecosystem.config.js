@@ -1,7 +1,7 @@
 module.exports = {
     apps: [{
       name: 'StitchStyle',
-      script: 'app.js', // the path of the script you want to execute,
+      script: 'server.js', // the path of the script you want to execute,
       // Options reference: https://pm2.keymetrics.io/docs/usage/application-declaration/
       instances: 1,
       autorestart: true,
