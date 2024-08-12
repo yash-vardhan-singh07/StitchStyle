@@ -3,7 +3,7 @@ const app=express();
 const cookieParser=require('cookie-parser');
 const cors=require('cors');
 app.use(express.json());
-app.listen(3001);
+app.listen(3000);
 console.log("app listening");
 app.use(cookieParser());
 const path=require('path');
@@ -21,9 +21,9 @@ app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '/')));
-const productModel=require('../models/productModel');
+const productModel=require('../server/models/productModel');
 
-const userRouter=require('../routers/userRouter');
+const userRouter=require('./routers/userRouter'); 
 
 app.use("/user",userRouter);
 

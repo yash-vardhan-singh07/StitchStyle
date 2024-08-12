@@ -1,6 +1,6 @@
-const contactModel = require('../server/models/contactModel');
-const productModel = require('../server/models/productModel');
-const cartModel =   require('../server/models/cartModel');
+const contactModel = require('../models/contactModel');
+const productModel = require('../models/productModel');
+const cartModel =   require('../models/cartModel');
 
 module.exports.deleteContact=async function deleteContact(req,res){
     let id =req.params.id;

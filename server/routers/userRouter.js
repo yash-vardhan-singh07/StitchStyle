@@ -2,9 +2,9 @@ const express = require('express');
 const userRouter = express.Router();
 const multer=require('multer');
 const cookieParser = require('cookie-parser');
-const{getUser,getAllUser,updateUser,deleteUser,updateProfileImage,getUserId}=require('../../controller/userController');
-const{signup,login,isAuthorised,protectRoute,logout,forgetPassword,resetPassword, getsign,contactUs,}=require('../../controller/authController');
-const{getAllContacts,deleteContact,updateProduct,deleteProduct,products,getSingleProduct,postProduct,getCart, updateCart}=require('../../controller/adminController');
+const{getUser,getAllUser,updateUser,deleteUser,updateProfileImage,getUserId}=require('../controller/userController');
+const{signup,login,isAuthorised,protectRoute,logout,forgetPassword,resetPassword, getsign,contactUs,}=require('../controller/authController');
+const{getAllContacts,deleteContact,updateProduct,deleteProduct,products,getSingleProduct,postProduct,getCart, updateCart}=require('../controller/adminController');
 
 
 

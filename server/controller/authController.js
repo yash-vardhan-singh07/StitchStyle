@@ -1,11 +1,11 @@
 const express = require('express');
-const userModel = require('../server/models/usermodel');
+const userModel = require('../models/usermodel');
 const jwt = require('jsonwebtoken');
 const bcrypt=require('bcrypt')
-const JWT_KEY = require('../server/public/secrets');
+const JWT_KEY = require('../public/secrets');
 const{sendMail}=require('../routers/nodemailer');
-const contactModel = require('../server/models/contactModel');
-const cartModel = require('../server/models/cartModel');
+const contactModel = require('../models/contactModel');
+const cartModel = require('../models/cartModel');
 
 module.exports.signup = async function signUp(req, res) {
     try {
