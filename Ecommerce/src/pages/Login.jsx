@@ -70,7 +70,7 @@ export const Login=()=>{
 		    <button type="submit" method="post">Signup</button>
       
 	      </form>
-            <p>Don't have an account? <a href="/signup">Sign Up</a></p>  
+            <p>Don't have an account? <a href="/signup">Login In</a></p>  
          </section>
 
 
