@@ -10,6 +10,22 @@ const path=require('path');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+// const _dirname=path.dirname("");
+// const buildPath=path.join(_dirname,"../Ecommerce");
+
+// app.use(express.static(buildPath))
+
+// app.get("/",function(req,res){
+//     res.sendFile(
+//         path.join(_dirname,"../Ecommerce/index.html"),
+//         function(err){
+//             if(err){
+//                 res.status(500).send(err);
+//             }
+//         }
+//     )
+// })
+
 
 const corsOptions={
     origin:"http://localhost:5173",

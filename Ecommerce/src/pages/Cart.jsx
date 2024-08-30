@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 export const Cart=()=>{
-    const{id}=useParams();
     const{authToken,isLoading,cart}=useAuth();
     const[cartData,setCartData]=useState([]);
     

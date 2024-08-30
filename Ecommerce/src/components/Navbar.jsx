@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import "./Style.css"
 import { useAuth } from "../store/auth";
 import { useNavigate } from "react-router-dom";
 export const Navbar=()=>{

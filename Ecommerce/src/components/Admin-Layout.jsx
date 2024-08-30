@@ -1,7 +1,6 @@
 import { Navigate, NavLink, Outlet } from "react-router-dom"
-import "./stylenav.css"
-import "./Style.css"
 import { useAuth } from "../store/auth"
+import '../Style.css'
 
 export const AdminLayout=()=>{
     const{user,isLoading}=useAuth();

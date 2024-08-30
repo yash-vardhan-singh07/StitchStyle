@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import "../components/Style.css"
 import { useParams } from 'react-router-dom';
 import { useAuth } from '../store/auth';
 
