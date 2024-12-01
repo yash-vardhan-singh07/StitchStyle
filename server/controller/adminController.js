@@ -129,36 +129,36 @@ module.exports.postProduct = async function postProduct(req, res) {
 
 
 
-module.exports.updateCart = async function updateCart(req, res) {
-    try {
-        let id = req.params.id;
-        let uid=req.header("ID");
-        // console.log("uid ",uid, " id ",id);
+// module.exports.updateCart = async function updateCart(req, res) {
+//     try {
+//         let id = req.params.id;
+//         let uid=req.header("ID");
+//         // console.log("uid ",uid, " id ",id);
         
         
-        const update= await cartModel.updateOne(
-            {userId:uid},
-            {$addToSet: { productId: id }},
-        )
-            res.status(200).json(update);
-        }
-    catch (err) {
-        res.json(err.message);
-    }
-}
+//         const update= await cartModel.updateOne(
+//             {userId:uid},
+//             {$addToSet: { productId: id }},
+//         )
+//             res.status(200).json(update);
+//         }
+//     catch (err) {
+//         res.json(err.message);
+//     }
+// }
 
 
 
-module.exports.getCart = async function getCart(req, res) {
-    try {
-          let id = req.params.id;
-        //   console.log("id from getcart",id);
+// module.exports.getCart = async function getCart(req, res) {
+//     try {
+//           let id = req.params.id;
+//         //   console.log("id from getcart",id);
           
-          const data= await cartModel.findOne({userId:id});
+//           const data= await cartModel.findOne({userId:id});
             
-          res.status(200).json(data);
-        }
-    catch (err) {
-        res.json(err.message);
-    }
-}
+//           res.status(200).json(data);
+//         }
+//     catch (err) {
+//         res.json(err.message);
+//     }
+// }

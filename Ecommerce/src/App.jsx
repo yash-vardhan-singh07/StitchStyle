@@ -8,7 +8,7 @@ import { About } from './pages/About';
 import { Footerr } from './components/Footerr';
 import { Blog } from './pages/Blog';
 import { Shop } from './pages/Shop';
-import { Cart } from './pages/Cart';
+// import { Cart } from './pages/Cart';
 import { Error } from './pages/Error';
 import { Logout } from './pages/Logout';
 import { AdminLayout } from './components/Admin-Layout';
@@ -32,7 +32,7 @@ const App=()=>{
             <Route path="/about" element ={<About/>}/>
             <Route path="/blog" element ={<Blog/>}/>
             <Route path="/shop" element ={<Shop/>}/>
-            <Route path="/cart/:id" element ={<Cart/>}/>
+            {/* <Route path="/cart/:id" element ={<Cart/>}/> */}
             <Route path="/logout" element ={<Logout/>}/>
             <Route path="/sprod/:id" element ={<Sprod/>}/>
             <Route path="*" element ={<Error/>}/>

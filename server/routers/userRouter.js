@@ -63,12 +63,7 @@ userRouter
 userRouter.use(protectRoute)
 userRouter
   .route('/sprod/:id')
-  .patch(updateCart)
-
-userRouter.use(protectRoute)
-userRouter
-  .route('/cart/:id')
-  .get(getCart) 
+ 
 
 
 userRouter.use(isAuthorised(['admin']));    

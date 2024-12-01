@@ -4,7 +4,7 @@ export const About=()=>{
     const {user}=useAuth();
     return(<>
      <section id="about-header">
-        <p>Hi {user.name}</p>
+        <p>Hi Yash Vardhan Singh</p>
         <h2>#about_us</h2>
 
         <p>Read more about us</p>

@@ -8,34 +8,34 @@ export const Home=()=>{
     const navigate=useNavigate();
 
       
-    const getCart= async()=>{
+    // const getCart= async()=>{
             
-        try {
-           const response=await fetch(`http://localhost:3000/user/cart/${user._id}`,
-               {
-                   method:"GET",
-                   headers:{
-                       Authorization:authToken,
+    //     try {
+    //        const response=await fetch(`http://localhost:3000/user/cart/${user._id}`,
+    //            {
+    //                method:"GET",
+    //                headers:{
+    //                    Authorization:authToken,
                       
-                   }
-               }
-           )
-           if(response.ok){
-            const data=await response.json(); 
-            console.log(data);
+    //                }
+    //            }
+    //        )
+    //        if(response.ok){
+    //         const data=await response.json(); 
+    //         console.log(data);
              
-            setCartData(data);  
+    //         setCartData(data);  
      
-           }
+    //        }
             
-          } catch (error) {
-           console.log(error);
+    //       } catch (error) {
+    //        console.log(error);
            
-          }
-       }
-     useEffect(()=>{
-         getCart();
-     },[])
+    //       }
+    //    }
+    //  useEffect(()=>{
+    //      getCart();
+    //  },[])
 
     return(
         <>
