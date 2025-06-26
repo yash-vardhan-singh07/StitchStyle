@@ -7,7 +7,7 @@ export const AdminContacts=()=>{
     const {authToken}=useAuth();
     const getContacts= async()=>{
         try {
-            const response=await fetch('http://localhost:3000/user/admin/contact',{
+            const response=await fetch(`${process.env.REACT_APP_API_URL || "http://localhost:5000"}/user/admin/contact`,{
                 method:"GET",
                 headers:{
                     Authorization:authToken,
@@ -26,7 +26,7 @@ export const AdminContacts=()=>{
     }
 
     const deleteContact=async (id)=>{
-        const response =await fetch(`http://localhost:3000/user/admin/contact/${id}`,{
+        const response =await fetch(`${process.env.REACT_APP_API_URL || "http://localhost:5000"}/user/admin/contact/${id}`,{
           method:"DELETE",
           headers:{
              Authorization:authToken,

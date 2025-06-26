@@ -10,7 +10,7 @@ export const AdminUsers=()=>{
    const{authToken,user}=useAuth();
     const getAllUsers= async()=>{
        try {
-          const response =await fetch("http://localhost:3000/user/admin/user",{
+          const response =await fetch(`${process.env.REACT_APP_API_URL || "http://localhost:5000"}/user/admin/user`,{
             method:"GET",
             headers:{
                Authorization:authToken,

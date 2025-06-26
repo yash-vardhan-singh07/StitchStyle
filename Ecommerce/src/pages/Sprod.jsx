@@ -19,7 +19,7 @@ export const Sprod=()=>{
 
         try {
             
-            const response=await fetch(`http://localhost:3000/user/product/${id}`,
+            const response=await fetch(`${process.env.REACT_APP_API_URL || "http://localhost:5000"}/user/product/${id}`,
                 {
                     method:"GET",
                     headers:{
@@ -40,7 +40,7 @@ export const Sprod=()=>{
  
 
      const handleClick=async ()=>{
-        const response=await fetch(`http://localhost:3000/user/sprod/${data._id}`,
+        const response=await fetch(`${process.env.REACT_APP_API_URL || "http://localhost:5000"}/user/sprod${data._id}`,
             {
                 method:"PATCH",
                 headers:{

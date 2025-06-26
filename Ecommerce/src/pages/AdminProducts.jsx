@@ -8,7 +8,7 @@ export const AdminProducts=()=>{
 
     const getProducts=async()=>{
         try {
-            const response =await fetch("http://localhost:3000/user/shop",
+            const response =await fetch(`${process.env.REACT_APP_API_URL || "http://localhost:5000"}/user/shop`,
                 {method:"GET"}
             );
 
@@ -23,7 +23,7 @@ export const AdminProducts=()=>{
 
     const deleteProduct=async (id)=>{
         
-        const response =await fetch(`http://localhost:3000/user/product/${id}`,{
+        const response =await fetch(`${process.env.REACT_APP_API_URL || "http://localhost:5000"}/user/product/${id}`,{
           method:"DELETE",
           headers:{
              Authorization:authToken,
@@ -41,7 +41,7 @@ export const AdminProducts=()=>{
     }
     const addProduct=async (id)=>{
         
-        const response =await fetch(`http://localhost:3000/user/product/${id}`,{
+        const response =await fetch(`${process.env.REACT_APP_API_URL || "http://localhost:5000"}/user/product/${id}`,{
           method:"",
           headers:{
              Authorization:authToken,

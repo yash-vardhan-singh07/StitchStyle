@@ -20,7 +20,7 @@ export const  Update=  ()=> {
   
 
     const getSingleUser=async ()=>{
-      const response=await fetch(`http://localhost:3000/user/${id}`,
+      const response=await fetch(`${process.env.REACT_APP_API_URL || "http://localhost:5000"}/user/${id}`,
         {
             method:"GET",
             headers:{
@@ -61,7 +61,7 @@ export const  Update=  ()=> {
 
        try {     
        // Call API or perform registration logic here
-       const response=await fetch(`http://localhost:3000/user/${id}`,
+       const response=await fetch(`${process.env.REACT_APP_API_URL || "http://localhost:5000"}/user/${id}`,
         {
             method:"PATCH",
             headers:{

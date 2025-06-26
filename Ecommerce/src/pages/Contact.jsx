@@ -36,7 +36,7 @@ export const Contact=()=>{
     const handleSubmit=async (e)=>{
           e.preventDefault();
           try {
-            const response=await fetch("http://localhost:3000/user/contact",
+            const response=await fetch(`${process.env.REACT_APP_API_URL || "http://localhost:5000"}/user/contact`,
                 {
                     method:"POST",
                     headers:
