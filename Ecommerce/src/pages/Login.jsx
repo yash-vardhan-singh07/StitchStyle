@@ -26,36 +26,39 @@ export const Login=()=>{
         console.log(user);
     }
 
-    const handleSubmit=async (e)=>{
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+      
         try {
-            const response= await fetch(`${process.env.REACT_APP_API_URL || "http://localhost:5000"}/user/login`,{
-                method:"POST",
-                 headers:{
-                  'Content-Type':"application/json"
-                 },
-                body:JSON.stringify(user),
-             })
-             if(response.ok){
-                const res_data=await response.json();
-                storetokenInLS(res_data);
-                
-
-                setUser({
-                    email:"",
-                    password:"",
-                })
-
-                console.log('Login Successfull');
-                navigate("/");
-             }
-            else{
-                 toast('Invalid Credentials');
-            }
+          const response = await fetch(`${API_URL}/user/login`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(user),
+          });
+      
+          if (response.ok) {
+            const res_data = await response.json();
+            storetokenInLS(res_data);
+      
+            setUser({
+              email: "",
+              password: "",
+            });
+      
+            console.log("Login Successful");
+            navigate("/");
+          } else {
+            toast("Invalid Credentials");
+          }
         } catch (error) {
-            console.log(e.message);
+          console.log("Login error:", error.message);
+          toast("Server error. Try again later.");
         }
-    }
+      };
+      
 
    return(
            <>
