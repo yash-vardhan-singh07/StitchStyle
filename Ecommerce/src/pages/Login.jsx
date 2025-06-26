@@ -28,9 +28,11 @@ export const Login=()=>{
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        
         const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
       
         try {
+            console.log("API_URL is:", API_URL);
           const response = await fetch(`${API_URL}/user/login`, {
             method: "POST",
             headers: {
