@@ -30,7 +30,7 @@ export const Login=()=>{
         e.preventDefault();
       
         try {
-            console.log("API_URL is:", API_URL);
+            console.log("API_URL is:", process.env.REACT_APP_API_URL);
           const response = await fetch(`${process.env.REACT_APP_API_URL}/user/login`, {
             method: "POST",
             headers: {
