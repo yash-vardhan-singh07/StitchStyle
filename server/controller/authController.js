@@ -1,7 +1,7 @@
 const express = require('express');
 const userModel = require('../models/usermodel');
 const jwt = require('jsonwebtoken');
-const bcrypt=require('bcrypt')
+const bcrypt=require('bcryptjs')
 const JWT_KEY = require('../public/secrets');
 const{sendMail}=require('../routers/nodemailer');
 const contactModel = require('../models/contactModel');
