@@ -33,31 +33,47 @@ export const Contact=()=>{
         })
     }
 
-    const handleSubmit=async (e)=>{
-          e.preventDefault();
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log("Contact form data:", contact);
+      
+        try {
+          const response = await fetch(`${process.env.REACT_APP_API_URL}/user/contact`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(contact),
+          });
+      
+          // Safely parse response JSON
+          let data = {};
           try {
-            const response=await fetch(`${process.env.REACT_APP_API_URL || "http://localhost:5000"}/user/contact`,
-                {
-                    method:"POST",
-                    headers:
-                    {
-                        'Content-Type':"application/json"
-                    },
-                    body:JSON.stringify(contact),
-                }
-            )
-
-            if(response.ok){
-                setContact(defaultContactForm);
-                const data=await response.json();
-                console.log(data);
-                alert("message sent successfully");
-            }
-
-          } catch (error) {
-            console.log(error);
+            data = await response.json();
+          } catch (err) {
+            console.warn("Empty or invalid JSON from server");
           }
-    }
+      
+          if (response.ok) {
+            setContact({
+              name: "",
+              email: "",
+              message: "",
+            });
+      
+            console.log("Server response:", data);
+            alert("Message sent successfully ✅");
+          } else {
+            const msg = data?.message || "Failed to send message";
+            alert(msg);
+          }
+      
+        } catch (error) {
+          console.error("Contact submission error:", error);
+          alert("Network error. Please try again.");
+        }
+      };
+      
 
 
    return( <>
