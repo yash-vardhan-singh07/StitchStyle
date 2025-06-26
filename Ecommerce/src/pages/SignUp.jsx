@@ -32,7 +32,7 @@ export const SignUp=()=> {
        e.preventDefault();
        // Call API or perform registration logic here
        console.log(user);
-       const response= await fetch(`${process.env.REACT_APP_API_URL || "http://localhost:5000"}/user/signup`,{
+       const response= await fetch(`${process.env.REACT_APP_API_URL}/user/signup`,{
           method:"POST",
            headers:{
             'Content-Type':"application/json"
