@@ -1,8 +1,8 @@
 const mongoose=require('mongoose');
 const emailValidator=require('email-validator')
-const bcrypt=require('bcrypt');
+const bcrypt=require('bcryptjs');
 const crypto=require('crypto');
-mongoose.connect(process.env.mongo)
+mongoose.connect('mongodb+srv://singhyashvardhan34:Vardhan16Singh@ss.amltamb.mongodb.net/?retryWrites=true&w=majority')
 .then(function(db){
     console.log("db connected");
 })

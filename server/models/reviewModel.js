@@ -1,11 +1,11 @@
 const mongoose=require('mongoose');
-mongoose.connect(process.env.mongo)
-.then(function(db){
-    console.log("plan db connected");
-})
-.catch(function(err){
-    console.log(err);
-});
+// mongoose.connect('mongodb+srv://singhyashvardhan34:Vardhan16Singh@ss.amltamb.mongodb.net/?retryWrites=true&w=majority')
+// .then(function(db){
+//     console.log("plan db connected");
+// })
+// .catch(function(err){
+//     console.log(err);
+// });
 
 const planSchema=new mongoose.Schema({
     review:{

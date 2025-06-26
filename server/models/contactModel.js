@@ -1,6 +1,6 @@
 const mongoose=require('mongoose');
 const emailValidator=require('email-validator')
-mongoose.connect(process.env.mongo)
+mongoose.connect('mongodb+srv://singhyashvardhan34:Vardhan16Singh@ss.amltamb.mongodb.net/?retryWrites=true&w=majority')
 .then(function(db){
     console.log("contact db connected");
 })
