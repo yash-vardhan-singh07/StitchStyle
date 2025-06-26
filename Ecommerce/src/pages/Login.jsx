@@ -29,9 +29,13 @@ export const Login=()=>{
     const handleSubmit = async (e) => {
         e.preventDefault();
       
+        const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+      
         try {
-            console.log("API_URL is:", process.env.REACT_APP_API_URL);
-          const response = await fetch(`${process.env.REACT_APP_API_URL}/user/login`, {
+          console.log("API_URL is:", API_URL);
+          console.log("Submitting user:", user);
+      
+          const response = await fetch(`${API_URL}/user/login`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -39,8 +43,15 @@ export const Login=()=>{
             body: JSON.stringify(user),
           });
       
+          // Safely parse JSON (may be empty if error)
+          let res_data = {};
+          try {
+            res_data = await response.json();
+          } catch (err) {
+            console.warn("Invalid or empty JSON in response");
+          }
+      
           if (response.ok) {
-            const res_data = await response.json();
             storetokenInLS(res_data);
       
             setUser({
@@ -51,13 +62,16 @@ export const Login=()=>{
             console.log("Login Successful");
             navigate("/");
           } else {
-            toast("Invalid Credentials");
+            const errorMsg = res_data?.message || "Invalid Credentials";
+            toast(errorMsg);
           }
+      
         } catch (error) {
-          console.log("Login error:", error.message);
-          toast("Server error. Try again later.");
+          console.error("Login error:", error.message);
+          toast("Server error. Please try again later.");
         }
       };
+      
       
 
    return(
