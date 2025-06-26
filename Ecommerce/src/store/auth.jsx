@@ -32,7 +32,7 @@ export const AuthProvider=({children})=>{
          try {
              setIsLoading(true);
             // console.log("token from user authentication",token);
-            const response=await fetch("http://localhost:3000/user/userProfile",{
+            const response=await fetch("process.env.REACT_APP_API_URL/user/userProfile"|| "http://localhost:5000",{
                 method:"GET",
                 headers:{
                     Authorization:authToken,
@@ -60,7 +60,7 @@ export const AuthProvider=({children})=>{
 
      const getProducts=async()=>{
         try {
-            const response =await fetch("http://localhost:3000/user/shop",{method:"GET"});
+            const response =await fetch("process.env.REACT_APP_API_URL/user/shop"|| "http://localhost:5000",{method:"GET"});
 
             if(response.ok){
                 const data=await response.json();

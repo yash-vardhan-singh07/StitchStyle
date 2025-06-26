@@ -28,7 +28,7 @@ const mongoose = require('mongoose');
 
 
 const corsOptions={
-    origin:"http://localhost:5173",
+    origin:"https://stitchstyle-backend.onrender.com",
     method:"POST,GET,PUT,PATCH,DELETE,HEAD",
     credentials:true,
     origin:true,
