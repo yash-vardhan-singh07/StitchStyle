@@ -136,7 +136,7 @@ button.normal{
 
 
 #hero{
-    background-image: url("img/background.jpg");
+    background-image: url("/img/background.jpg");
     background-repeat: no-repeat;
     height: 90vh;
     padding: 0 80px;
@@ -333,7 +333,7 @@ button.normal{
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: url("img/banner/ban1.jpg");
+    background-image: url("/img/banner/ban1.jpg");
     background-repeat: no-repeat;
     width: 100%;
     height: 40vh;
@@ -364,7 +364,7 @@ button.normal{
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    background-image: url("img/banner/ban2.jpg");
+    background-image: url("/img/banner/ban2.jpg");
     background-repeat: no-repeat;
     min-width: 580px;
     height: 50vh;
@@ -375,7 +375,7 @@ button.normal{
 
 
 #sm-banner .banner-box2{
-    background-image: url("img/banner/bann3.png");
+    background-image: url("/img/banner/bann3.png");
 }
 
 #sm-banner{
@@ -432,7 +432,7 @@ button.white:hover{
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    background-image: url("img/banner/bann4.jpg");
+    background-image: url("/img/banner/bann4.jpg");
     background-repeat: no-repeat;
     min-width: 30%;
     height: 30vh;
@@ -442,10 +442,10 @@ button.white:hover{
     margin-bottom: 20px;
 }
 #banner3 .banner-box:nth-child(2){
-    background-image: url("img/banner/ban5.jpg");
+    background-image: url("/img/banner/ban5.jpg");
 }
 #banner3 .banner-box:nth-child(3){
-    background-image: url("img/banner/ban6.jpg");
+    background-image: url("/img/banner/ban6.jpg");
 }
 #banner3 .banner-box:nth-child(1) h3{
    display: none;
@@ -583,7 +583,7 @@ footer .cprt{
 }
 
 #page-header{
-    background-image: url("img/banner/shophead.jpg");
+    background-image: url("/img/banner/shophead.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -674,7 +674,7 @@ footer .cprt{
 
 
 #blog-header{
-    background-image: url("img/blog/blog.jpg");
+    background-image: url("/img/blog/blog.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -746,7 +746,7 @@ footer .cprt{
     z-index: -9;
 }
 #about-header{
-    background-image: url("img/banner/about.jpg");
+    background-image: url("/img/banner/about.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
