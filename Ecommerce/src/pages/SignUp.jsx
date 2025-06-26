@@ -28,38 +28,52 @@ export const SignUp=()=> {
     
   
   
-     const handleSubmit = async e => {
-       e.preventDefault();
-       // Call API or perform registration logic here
-       console.log(user);
-       const response= await fetch(`${process.env.REACT_APP_API_URL}/user/signup`,{
-          method:"POST",
-           headers:{
-            'Content-Type':"application/json"
-           },
-          body:JSON.stringify(user),
-       })
-
-
-       const res_data=await response.json();
-       console.log("res from server",res_data.extraDetails)
-       if(response.ok){
-
-        
-        storetokenInLS(res_data);
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      console.log("Submitting user:", user);
+    
+      try {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/user/signup`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(user),
+        });
+    
+        // Parse safely, only if response body is not empty
+        let res_data;
+        try {
+          res_data = await response.json();
+        } catch (err) {
+          res_data = {}; // fallback if response was empty or not JSON
+        }
+    
+        if (response.ok) {
+          console.log("res from server", res_data.extraDetails);
+          storetokenInLS(res_data);
+    
           setUser({
-            name:"",
-            email:"",
-            password:"",
-            confirmPassword:"",
-       })
+            name: "",
+            email: "",
+            password: "",
+            confirmPassword: "",
+          });
+    
           navigate("/");
-       }else{
-        alert(res_data.extraDetails? res_data.extraDetails:res_data.message);
-       }
-
-    console.log(response);
-  };
+        } else {
+          const msg = res_data?.extraDetails || res_data?.message || "Signup failed";
+          alert(msg);
+        }
+    
+        console.log("Full response:", response);
+    
+      } catch (error) {
+        console.error("Network error:", error);
+        alert("Network error. Please try again.");
+      }
+    };
+    
 
 
 
